@@ -1,0 +1,54 @@
+{
+	"name": "node-express-mongodb-template",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "npm run prod",
+		"server": "node server/bin/www",
+		"dev": "cross-env NODE_ENV=development npm run server",
+		"prod": "cross-env NODE_ENV=production npm run server",
+		"watch:dev": "nodemon"
+	},
+	"type": "module",
+	"nodemonConfig": {
+		"exec": "npm run dev",
+		"watch": [
+			"server/*",
+			"public/*"
+		],
+		"ignore": [
+			"**/__tests__/**",
+			"*.test.js",
+			"*.spec.js"
+		]
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"dependencies": {
+		"@babel/cli": "^7.10.5",
+		"@babel/core": "^7.11.1",
+		"@babel/preset-env": "^7.11.0",
+		"@babel/runtime": "^7.11.2",
+		"@sendgrid/mail": "^7.2.3",
+		"argon2": "^0.27.0",
+		"bcryptjs": "^2.4.3",
+		"cookie-parser": "~1.4.4",
+		"cross-env": "^7.0.2",
+		"debug": "~2.6.9",
+		"dotenv": "^8.2.0",
+		"express": "~4.16.1",
+		"express-multipart-file-parser": "^0.1.2",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.9.28",
+		"morgan": "~1.9.1",
+		"nodemon": "^2.0.4",
+		"npm-run-all": "^4.1.5",
+		"remove": "^0.1.5",
+		"rimraf": "^3.0.2",
+		"uuid": "^8.3.0"
+	},
+	"devDependencies": {}
+}
