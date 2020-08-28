@@ -14,7 +14,7 @@ export const register = async (req, res) => {
 		const newResponse = await User.create(user);
 		if (!newResponse) return res.status(400).json({ error: "Error occured while registering the user" });
 		return res.status(201).json({
-			message: "Successfully registered " + name,
+			message: "Successfully registered " + email,
 		});
 	} catch (error) {
 		return res.status(400).json({ error: "error occurred while registering the user" });
